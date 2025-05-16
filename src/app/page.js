@@ -1,9 +1,10 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 
+
 export default function Home() {
   return (
-    <div className={styles.page}>
+    /*<div className={styles.page}>
       <main className={styles.main}>
         <Image
           className={styles.logo}
@@ -90,6 +91,10 @@ export default function Home() {
           Go to nextjs.org →
         </a>
       </footer>
+    </div>*/
+    <div className="d-flex flex-column justify-content-center align-items-center p-2">
+      <h1 className="">Mi Aplicación Web</h1>
+      <p className="">¡Bienvenido/a a nuestra plataforma! Esperamos que disfrutes la experiencia.</p>
     </div>
   );
 }

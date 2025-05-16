@@ -1,5 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import './globals.css';
+import 'bootstrap/dist/css/bootstrap.min.css'; // Bootstrap para el diseño
+import Link from 'next/link'; // Importa Link de Next.js
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,7 +22,26 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+        <nav className="d-flex justify-content-center py-3 bg-light">
+          <ul className="list-unstyled d-flex gap-4">
+            <li>
+              <Link href="/" className="btn btn-primary">Inicio</Link>
+            </li>
+            <li>
+              <Link href="/products" className="btn btn-primary">Productos</Link>
+            </li>
+            <li>
+              <Link href="/contact" className="btn btn-primary">Contacto</Link>
+            </li>
+            <li>
+              <Link href="/products/reviews" className="btn btn-primary">Reviews</Link>
+            </li>
+            <li>
+              <Link href="/post" className="btn btn-primary">API</Link>
+            </li>
+          </ul>
+        </nav>
+        <main>{children}</main>
       </body>
     </html>
   );
